@@ -1,0 +1,77 @@
+﻿<Window x:Class="TheFinalCalculator.Views.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TheFinalCalculator"
+        mc:Ignorable="d"
+        Title="The Best Calcuator" Height="450" Width="600" Background="DarkSlateGray" Margin="5,5,5,5" MinWidth="400" MinHeight="350">
+    <Grid>
+        <!-- Grid Difinitions -->
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <!-- Display Box -->
+        <TextBlock Name="DisplayBox" Text="{Binding Path=Display, Mode=TwoWay}" Background="White" 
+         Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="5" TextAlignment="Right" VerticalAlignment="Bottom" FontSize="38"></TextBlock>
+        <TextBlock  Name="ExpressionBox" Text="{Binding Path=FullExpression, Mode=TwoWay}" Background="LightGray" 
+         TextAlignment="Center" VerticalAlignment="Bottom" Grid.Column="0" Grid.Row="1" Margin="2,2,2,15" Grid.ColumnSpan="3" FontSize="24"></TextBlock>
+
+        <!-- Number Buttons -->
+        <Button Name="Button7" Command="{Binding DigitButtonPressCommand}" CommandParameter="7" Grid.Row="2" Grid.Column="0">7</Button>
+        <Button Name="Button8" Command="{Binding DigitButtonPressCommand}" CommandParameter="8" Grid.Row="2" Grid.Column="1">8</Button>
+        <Button Name="Button9" Command="{Binding DigitButtonPressCommand}" CommandParameter="9" Grid.Row="2" Grid.Column="2">9</Button>
+        <Button Name="Button4" Command="{Binding DigitButtonPressCommand}" CommandParameter="4" Grid.Row="3" Grid.Column="0">4</Button>
+        <Button Name="Button5" Command="{Binding DigitButtonPressCommand}" CommandParameter="5" Grid.Row="3" Grid.Column="1">5</Button>
+        <Button Name="Button6" Command="{Binding DigitButtonPressCommand}" CommandParameter="6" Grid.Row="3" Grid.Column="2">6</Button>
+        <Button Name="Button1" Command="{Binding DigitButtonPressCommand}" CommandParameter="1" Grid.Row="4" Grid.Column="0">1</Button>
+        <Button Name="Button2" Command="{Binding DigitButtonPressCommand}" CommandParameter="2" Grid.Row="4" Grid.Column="1">2</Button>
+        <Button Name="Button3" Command="{Binding DigitButtonPressCommand}" CommandParameter="3" Grid.Row="4" Grid.Column="2">3</Button>
+        <Button Name="Button0" Command="{Binding DigitButtonPressCommand}" CommandParameter="0" Grid.Row="5" Grid.Column="1">0</Button>
+        <Button Name="ButtonPoint" Command="{Binding DigitButtonPressCommand}" CommandParameter="." Grid.Row="5" Grid.Column="2">.</Button>
+
+        <!-- Math Buttons -->
+
+        <Button Name="ButtonPlus" Command="{Binding OperationButtonPressCommand}" CommandParameter="+" Grid.Row="2" Grid.Column="3">+</Button>
+        <Button Name="ButtonMinus" Command="{Binding OperationButtonPressCommand}" CommandParameter="-" Grid.Row="3" Grid.Column="3">-</Button>
+        <Button Name="ButtonMultiply" Command="{Binding OperationButtonPressCommand}" CommandParameter="*" Grid.Row="4" Grid.Column="3">*</Button>
+        <Button Name="ButtonDivide" Command="{Binding OperationButtonPressCommand}" CommandParameter="/" Grid.Row="5" Grid.Column="3">/</Button>
+        <Button Name="ButtonPrecent" Command="{Binding OperationButtonPressCommand}" CommandParameter="%" Grid.Row="6" Grid.Column="3">%</Button>
+        <Button Name="ButtonSin" Command="{Binding SingularOperationButtonPressCommand}" CommandParameter="sin" Grid.Row="2" Grid.Column="4">Sin</Button>
+        <Button Name="ButtonCos" Command="{Binding SingularOperationButtonPressCommand}" CommandParameter="cos" Grid.Row="3" Grid.Column="4">Cos</Button>
+        <Button Name="ButtonTan" Command="{Binding SingularOperationButtonPressCommand}" CommandParameter="tan" Grid.Row="4" Grid.Column="4">Tan</Button>
+        <Button Name="ButtonSquare" Command="{Binding SingularOperationButtonPressCommand}" CommandParameter="sqr" Grid.Row="5" Grid.Column="4">^2</Button>
+        <Button Name="ButtonSquareRoot" Command="{Binding SingularOperationButtonPressCommand}" CommandParameter="sqrt" Grid.Row="6" Grid.Column="4">SqRt</Button>
+
+        <!-- Equals -->
+
+        <Button Name="ButtonEqual" Command="{Binding OperationButtonPressCommand}" CommandParameter="=" Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="3" FontSize="30">=</Button>
+
+        <!-- Clear -->
+        <Button Name="ButtonDel" Command="{Binding DigitButtonPressCommand}" CommandParameter="Del" Grid.Row="1" Grid.Column="3">CE</Button>
+        <Button Name="ButtonC" Command="{Binding DigitButtonPressCommand}" CommandParameter="C" Grid.Row="1" Grid.Column="4" ToolTip="Clear All">C</Button>
+
+        <!-- Positive/Negative -->
+        <Button Name="ButtonPlusMinus" Command="{Binding DigitButtonPressCommand}" CommandParameter="+/-" Grid.Row="5" Grid.Column="0">+ -</Button>
+
+        <!-- Filler -->
+        <Border Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="3" BorderThickness="0"></Border>
+
+    </Grid>
+</Window>
